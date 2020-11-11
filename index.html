@@ -100,50 +100,126 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Behind" startnode="1" creator="Twine" creator-version="2.3.5" ifid="57BE13C2-569F-46B1-9D6D-8DD7A3F1B661" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="title page" tags="" position="412,189" size="100,100">&lt;&lt;set $openEyes = false&gt;&gt; 
+	<tw-storydata name="Behind" startnode="1" creator="Twine" creator-version="2.3.5" ifid="57BE13C2-569F-46B1-9D6D-8DD7A3F1B661" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	font-family: "Lucida Console", Courier, monospace;
+  	background-color: #a6a6a6;
+  	color: #394241;
+  	margin-top: 100px;
+}
+
+a {
+	color: #0b378e;
+}
+
+.diary {
+  	font-family: "Courier New", Courier, monospace;
+  	color: #404040;
+  	padding-left: 50px;
+  	padding-right: 150px;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="title page" tags="" position="412,189" size="100,100">&lt;div class=&quot;container-outer&quot;&gt;
+	&lt;p class=&quot;title_name&quot;&gt;Behind&lt;/p&gt;
+  	&lt;p class=&quot;author&quot;&gt;Tim Jia&lt;/p&gt;	
+  	&lt;p class=&quot;start&quot;&gt;[[start]]&lt;/p&gt;
+  	&lt;img id=&quot;background&quot; src=&quot;https://i.ibb.co/CBjzs5C/rear-mirror.png&quot;&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  .container-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+  }
+  
+  .title_name {
+	position: absolute;
+	color: #e1f0e5;
+	font-size: 50px;
+	font-family: &quot;Lucida Console&quot;, Courier, monospace;
+	text-align: left;
+	width: auto;
+	left: 6%;
+	bottom: 35%;
+  }
+  
+  .author {
+	position: absolute;
+	color: #e1f0e5;
+	font-size: 30px;
+	font-family: &quot;Lucida Console&quot;, Courier, monospace;
+	text-align: left;
+	width: auto;
+	left: 6%;
+	bottom: 32%;
+  }
+  
+  .start {
+	position: absolute;
+	font-size: 30px;
+	font-family: &quot;Lucida Console&quot;, Courier, monospace;
+	text-align: center;
+	width: 100%;
+	bottom: 10%;
+  }
+  
+  a {
+	color: #e1f0e5;
+  }
+  
+  #background {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+  }
+  
+  body {
+  	background-color: black;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="start" tags="" position="412,339" size="100,100">&lt;&lt;set $openEyes = false&gt;&gt; 
 &lt;&lt;set $moveFinger = false&gt;&gt; 
 &lt;&lt;set $tryToTalk = false&gt;&gt;
 
-
-[[start]]</tw-passagedata><tw-passagedata pid="2" name="start" tags="" position="412,339" size="100,100">You consciousness comes back to you.
+You consciousness comes back to you.
 
 
 [[Open eyes][$openEyes to true]]
 [[Move finger][$moveFinger to true]]
 [[Try to talk][$tryToTalk to true]]</tw-passagedata><tw-passagedata pid="3" name="Open eyes" tags="" position="262,489" size="100,100">Things are blurry and unbearably bright at first, but over some time your eyes find their focus. 
 
-You are lying on bed, and a young man sits by your side.
+You are lying on bed. A young man sits by your side. His eyes are closed, and he looks extremely tired.
 
 This seems like a hospital.
 
 &lt;&lt;if not $moveFinger&gt;&gt;[[Move finger][$moveFinger to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $tryToTalk&gt;&gt;[[Try to talk][$tryToTalk to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $moveFinger and $tryToTalk&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Move finger" tags="" position="412,489" size="100,100">Your body feels alien to you, until you feel the pain when you try to just slightly move your finger. The pain is certainly unpleasant, but at least it confirms you can still feel your body.
+&lt;&lt;if $moveFinger and $tryToTalk&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Move finger" tags="" position="412,489" size="100,100">Your body feels alien to you, until you feel the pain when you try to just slightly move your finger. The pain is certainly unpleasant, but at least it confirms you can still feel your body.
 
 &lt;&lt;if not $openEyes&gt;&gt;[[Open eyes][$openEyes to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $tryToTalk&gt;&gt;[[Try to talk][$tryToTalk to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $openEyes and $tryToTalk&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Try to talk" tags="" position="562,489" size="100,100">You try to move your tongue, but only to find your mouth and throat extremely dry. You slightly open your mouth but struggle to say a meaningful word. Maybe an &quot;uh&quot; syllable comes out, maybe it does not make a sound.
+&lt;&lt;if $openEyes and $tryToTalk&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Try to talk" tags="" position="562,489" size="100,100">You try to move your tongue, but only to find your mouth and throat extremely dry. You slightly open your mouth but struggle to say a meaningful word. Maybe an &quot;uh&quot; syllable comes out, or maybe it does not make any sound.
 
 You have to close your mouth and move your tongue to moisten your throat. Now you should be able to talk.
 
 &lt;&lt;if not $openEyes&gt;&gt;[[Open eyes][$openEyes to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $moveFinger&gt;&gt;[[Move finger][$moveFinger to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $openEyes and $moveFinger&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="&quot;James&quot;" tags="" position="409,646" size="100,100">&lt;&lt;set $where = false&gt;&gt; 
+&lt;&lt;if $openEyes and $moveFinger&gt;&gt;Looking at the young man, you say, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="&quot;James&quot;" tags="" position="409,646" size="100,100">&lt;&lt;set $where = false&gt;&gt; 
 &lt;&lt;set $what = false&gt;&gt; 
 &lt;&lt;set $howLong = false&gt;&gt; 
 
-&quot;Hey mom, you wake up!&quot; James suddenly puts down his phone, and reacts with surprise and joy.
+Hearing your voice, the young man startles and opens his eyes wide.
 
-Yes. James is your son.
+&quot;Mom! You wake up!&quot; He almost yells out loud, full of surprise and excitement.
+
+Yes. This young man, James, is your son.
 
 [[&quot;Where am I?&quot;][$where to true]]
 [[&quot;What happened to me?&quot;][$what to true]]
-[[&quot;How long have I been here?&quot;][$howLong to true]]</tw-passagedata><tw-passagedata pid="7" name="&quot;Where am I?&quot;" tags="" position="259,796" size="100,100">&quot;You are in the hospital. Don&#39;t worry. The doctor said your condition is stable now.&quot; James speaks calmly and reassuringly, as if everything is in his control.
+[[&quot;How long have I been here?&quot;][$howLong to true]]</tw-passagedata><tw-passagedata pid="7" name="&quot;Where am I?&quot;" tags="" position="259,796" size="100,100">&quot;You are in the hospital. Don&#39;t worry. The doctor said your condition is stable now. You just need to rest.&quot; James speaks reassuringly, as if everything is in his control.
 
 
 &lt;&lt;if not $what&gt;&gt;[[&quot;What happened to me?&quot;][$what to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $howLong&gt;&gt;[[&quot;How long have I been here?&quot;][$howLong to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $where and $howLong&gt;&gt;You try to think, but [[your brain hurts]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="&quot;What happened to me?&quot;" tags="" position="409,796" size="100,100">&quot;You had a car accident. They said you passed out when you got here. Do you remember anything mom?&quot;
+&lt;&lt;if $where and $howLong&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="&quot;What happened to me?&quot;" tags="" position="409,796" size="100,100">&quot;You had a car accident. They said you were already unconscious when you got here. Do you remember anything mom?&quot;
 
 You try to think, but nothing comes to you. You shake your head.
 
@@ -151,38 +227,42 @@ You try to think, but nothing comes to you. You shake your head.
 
 &lt;&lt;if not $where&gt;&gt;[[&quot;Where am I?&quot;][$where to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $howLong&gt;&gt;[[&quot;How long have I been here?&quot;][$howLong to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $where and $howLong&gt;&gt;You try to think, but [[your brain hurts]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="&quot;How long have I been here?&quot;" tags="" position="559,796" size="100,100">&quot;You&#39;ve been sleeping for 3 days.&quot;
+&lt;&lt;if $where and $howLong&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="&quot;How long have I been here?&quot;" tags="" position="559,796" size="100,100">&quot;You&#39;ve been sleeping for 3 days.&quot;
 
-&quot;3 days?&quot; You cannot believe it&#39;s been that long. You also cannot believe you recall nothing from before.
+&quot;3 days?&quot; You don&#39;t even know long it feels, because cannot recall when it started. Actually, you recall nothing except void.
 
-&quot;Yeah. The doctor said you were lucky. The situation could have been much worse --  you could have been killed. 3 days is nothing compared to that.&quot; James&#39; tone is relaxed, but you know it probably has been very difficult 3 days for him.
+&quot;Yeah. The doctor said you were lucky. The situation could have been much worse --  you could have been killed. 3 days is nothing compared to that.&quot; James makes it sound easy, but you know it probably has been very difficult 3 days for him.
 
 &lt;&lt;if not $where&gt;&gt;[[&quot;Where am I?&quot;][$where to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $what&gt;&gt;[[&quot;What happened to me?&quot;][$what to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $where and $what&gt;&gt;You try to think, but [[your brain hurts]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="your brain hurts" tags="" position="398,972" size="100,100">Thinking about the past feels like sticking a finger into a bleeding wound -- all you get is pain, and here is nothing behind the pain.
+&lt;&lt;if $where and $what&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="your brain hurts" tags="" position="398,972" size="100,100">Engaging with any thoughts feels like sticking a finger into a bleeding wound -- all you get is pain, and after the pain there is nothing.
 
-You cannot recall what is your job, where you live, what you were up to, the happiest moment in your life...the only thing you remember is James, your son.
+You cannot recall what is your job, where you live, what you were up to, the happiest moment in your life...but you do still recognize James, your son.
 
-The harder you probe your memory, the more more severe your headache feel. You close your eyes, and [[lose consciousness]] again.</tw-passagedata><tw-passagedata pid="11" name="lose consciousness" tags="" position="398,1122" size="100,100">In the limbo of consciousness, you see James. Not the tall and strong young man right now, but the child James about 5 or 6 years old.
+The harder you probe your memory, the more severe your headache feels. You close your eyes, and [[lose consciousness]] again.</tw-passagedata><tw-passagedata pid="11" name="lose consciousness" tags="" position="398,1122" size="100,100">In the limbo of consciousness, you see James. Not the tall and strong young man right now, but the child James about 5 or 6 years old.
 
-He is waving at you with a notebook in his hand. You run to him but he runs away, as if playing hide and seek with you.
+He is running behind you, trying to catch you, and you run ahead. He giggles and laughs at first, but later his voice turns to pleading.
 
-&quot;James, let mom see the book.&quot; You asks as you run, but James keeps laughing and running. A few times you almost catch James, but he always slips away.
+&quot;Mom, wait for me...&quot;
 
-This catching and running game goes on and on... until this time you are getting close to James again. You use all our power and strength to fling over to James. You finally catch him.
+You are still running ahaed, and James cannot catch you. You keep running even after hearing his voice. 
 
-Lying on the ground and being held in your arms, young James is still laughing.  You take the notebook from him. As you open the first page, you [[wake up]].</tw-passagedata><tw-passagedata pid="12" name="wake up" tags="" position="398,1272" size="100,100">The headache does not go away, but it feels slightly better. You don&#39;t know how long has it been since you wake up last time, but James is not here. You are alone in the hospital room.
+You want to stop, you want to turn around and hold him in your arms, but you just cannot -- you cannot control your body.
 
-Again you try to remember things from the past, but nothing comes to you.
+You run faster and faster, and James is further and further behind. His voices is fading away
 
-A nurse comes into your room, holding a handbag.
+&quot;Mom, wait for me...&quot;
 
-&quot;Your son said you were having trouble remembering things. This may be temporary because you just wake up. We will have to see. Here are your belongings with you when you were sent here. Maybe they can help you remember something.&quot;
+You run and run, exhausted but still cannot stop, until there is nothing around you, until you can see nothing but black empty space, until you [[wake up]].</tw-passagedata><tw-passagedata pid="12" name="wake up" tags="" position="398,1272" size="100,100">The headache does not go away, but the pain in your body feels slightly better. You don&#39;t know how long has it been since you wake up last time, but James is not here. You are alone in the hospital room.
 
-The nurse puts down the [[handbag|handbag first][$hint to 0]] and leaves.
+Again you try to remember things from the past, but still nothing comes to you.
 
-&lt;&lt;set $hintLimit = 5&gt;&gt; </tw-passagedata><tw-passagedata pid="13" name="handbag" tags="" position="659,1755" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+A nurse comes into your room, holding a worn-out handbag.
+
+&quot;Your son said you were having trouble remembering things, so I&#39;m bringing this to you.&quot; The nurse puts down the [[handbag|handbag first][$hint to 0]]. &quot;Here are your belongings with you when you were sent here. Maybe they can help you remember something.&quot;</tw-passagedata><tw-passagedata pid="13" name="handbag" tags="" position="659,1755" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
 You can see
+
+
 &lt;&lt;if not hasVisited(&quot;A purse&quot;)&gt;&gt;[[A purse][$hint to $hint + 1]]&lt;&lt;else&gt;&gt;A purse&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;A bus ticket&quot;)&gt;&gt;[[A bus ticket][$hint to $hint + 1]]&lt;&lt;else&gt;&gt;A bus ticket&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;A notebook&quot;)&gt;&gt;[[A notebook][$hint to $hint + 1]]&lt;&lt;else&gt;&gt;A notebook&lt;&lt;/if&gt;&gt;
@@ -193,38 +273,45 @@ As you put the item back to the handbag, James walks in.
 
 &quot;Mom you are awake! How are you feeling?&quot;
 
-You put away the handbag, and greet James with your eyes. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
+You put away the handbag, and greet James. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
 
-[[ask about his situation]]
-[[ask about your past]]
-
+[[Ask about his situation]]
+[[Ask about your past]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="A notebook" tags="" position="173,1572" size="100,100">You open the first page.
 
+&lt;div class=&quot;diary&quot;&gt;
 1998 April 30 
 
-I&#39;m starting a new journal for this special day -- today Thomas and I are officially in relationship. He said I just cannot stop smiling all night. I bet that is true. All the longing, the waiting, and the sleepless nights are finally over, and they are all worth it even just for tonight.
+I&#39;m starting a new journal for this special day -- today Thomas and I are officially in relationship. 
+
+He said I just cannot stop smiling all night. I bet that is true. All the longing, the waiting, and the sleepless nights are finally over, and they are all worth it even just for tonight.
+&lt;/div&gt;
+
 
 [[next page|page 2][$hint to $hint + 1]]
 [[flip to a random page][$hint to $hint + 1]]
 [[last page][$hint to $hint + 1]]
-[[put back|handbag]]</tw-passagedata><tw-passagedata pid="15" name="A purse" tags="" position="323,1572" size="100,100">The purse looks worn off. It has plenty marks of time on it, and the color is faded.
+[[put back|handbag]]</tw-passagedata><tw-passagedata pid="15" name="A purse" tags="" position="323,1572" size="100,100">The purse looks old. It has lots of marks on it, and its color is faded.
 
 You open the purse. 
 
-There are about $80 worth of cash.
+There are about $20 cash, all $1 bills and coins.
 
 There is an old photo of you and James, when James is little.
 
-You also find there is also a [[secret pocket][$hint to $hint + 1]] in the purse.
+You also find a [[secret pocket][$hint to $hint + 1]] in the purse.
 
-[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="16" name="A bus ticket" tags="" position="473,1572" size="100,100">A greyhound bus ticket to Buffalo City. The departure time is August 5th, 2019, 3 days ago.
+[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="16" name="A bus ticket" tags="" position="473,1572" size="100,100">A greyhound bus ticket to Buffalo City printed on a regular paper. The departure time is August 5th, 2019, 3 days ago.
 
-[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="17" name="A medicine box" tags="" position="623,1572" size="100,100">The medicine box is not labeled. It is half-full with some white pills.
+[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="17" name="A medicine box" tags="" position="623,1572" size="100,100">The medicine box is not labeled. It is full with some white pills.
 
 [[Put back|handbag]]</tw-passagedata><tw-passagedata pid="18" name="flip to a random page" tags="" position="201,1710" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+&lt;div class=&quot;diary&quot;&gt;
 2000 November 14
 
-James is not making my life easy. I vomitted 3 times today and I look horrendous in the mirror. Being pregnant is already a torture, but how are we going to hold our lives together when James comes out? Where do we get the money to feed the baby?
+James is not making my life easy. I vomitted 3 times today and I look horrendous in the mirror. Being pregnant is already a torture, but how are we going to hold our lives together when James comes? Where do we get the money to feed him?
+&lt;/div&gt;
+
 
 &lt;&lt;if not hasVisited(&quot;page 4&quot;)&gt;&gt;[[next page|page 4][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;page 5&quot;)&gt;&gt;[[flip to a random page|page 5][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
@@ -237,24 +324,29 @@ As you read the journal, James walks in.
 
 You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
 
-[[ask about his situation]]
-[[ask about your past]]
+[[Ask about his situation]]
+[[Ask about your past]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="secret pocket" tags="" position="369,1725" size="100,100">You reach to the secret pocket.
 
-There is a cashed check of $600, payable to you, from TidyMaid Cleaning Company.
+There is a check of $600, payable to you, from TidyMaid Cleaning Company. The note says, &quot;Severance&quot;, and the date is July 30, 2019. The check is already cashed.
 
-Your finger also feels a hard item deep in the pocket. You reach for it and it is a ring.
+Your finger also feels a hard small item deep in the pocket. You reach for it. 
 
-The ring looks, to put it nicely, low-key. It does not have a fancy design, nor  does it look well-preserved or shiny.
+It is a ring.
+
+The ring is rusty already. It has silver color, with no diamond on top. Its design looks, to put it nicely, low-key.
 
 [[Put back|handbag]]</tw-passagedata><tw-passagedata pid="20" name="A lighter" tags="" position="785,1575" size="100,100">Just a regular cheap lighter from gas station.
 
 [[Put back|handbag]]</tw-passagedata><tw-passagedata pid="21" name="page 2" tags="" position="39,1716" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+&lt;div class=&quot;diary&quot;&gt;
 1998 May 4
 
 Thomas takes me to a movie today. It is weird going out with him as his girlfriend. I don&#39;t even know where to put my hands. Should I hold his hand? Or should I wait for him to start?
 
 I was nervous. What are couples supposed to do at the movie? All I know is I had no idea what the movie was about.
+&lt;/div&gt;
+
 
 &lt;&lt;if not hasVisited(&quot;flip to a random page&quot;)&gt;&gt;[[flip to a random page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;last page&quot;)&gt;&gt;[[last page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
@@ -266,14 +358,17 @@ As you read the journal, James walks in.
 
 You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
 
-[[ask about his situation]]
-[[ask about your past]]
+[[Ask about his situation]]
+[[Ask about your past]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="page 4" tags="" position="44,1838" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+&lt;div class=&quot;diary&quot;&gt;
 2000 November 20
 
 Thomas&#39; job interview didn&#39;t go well today. It&#39;s near Thanksgiving. No one hire new people in the holiday season. It&#39;s no holiday for us.
 
 James, I don&#39;t know if I should bring you to this world, in a family like this. I&#39;m sorry...
+&lt;/div&gt;
+
 
 &lt;&lt;if not hasVisited(&quot;page 5&quot;)&gt;&gt;[[flip to a random page|page 5][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;last page&quot;)&gt;&gt;[[last page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
@@ -285,12 +380,17 @@ As you read the journal, James walks in.
 
 You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
 
-[[ask about his situation]]
-[[ask about your past]]
+[[Ask about his situation]]
+[[Ask about your past]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="page 5" tags="" position="206,1861" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+&lt;div class=&quot;diary&quot;&gt;
 2006 September 30
 
-It&#39;s Thomas&#39; birthday today. I don&#39;t know where he is now, and I don&#39;t know if I miss him. I atually don&#39;t feel much, but why do I even write about him? It&#39;s just another normal boring day.
+It&#39;s Thomas&#39; birthday today. 
+
+I don&#39;t know where he is now, and I don&#39;t why I even remember this. I atually don&#39;t feel much, but why do I even write about him? It&#39;s just another normal tiring day.
+&lt;/div&gt;
+
 
 &lt;&lt;if not hasVisited(&quot;last page&quot;)&gt;&gt;[[last page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
 [[put back|handbag]]
@@ -301,12 +401,15 @@ As you read the journal, James walks in.
 
 You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
 
-[[ask about his situation]]
-[[ask about your past]]
+[[Ask about his situation]]
+[[Ask about your past]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="last page" tags="" position="26,2005" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+&lt;div class=&quot;diary&quot;&gt;
 2019 August 04
 
 I&#39;m sorry, James.
+&lt;/div&gt;
+
 
 [[previous page][$hint to $hint + 1]]
 &lt;&lt;if not hasVisited(&quot;flip to a random page&quot;)&gt;&gt;[[flip to a random page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
@@ -318,12 +421,15 @@ As you read the journal, James walks in.
 
 You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
 
-[[ask about his situation]]
-[[ask about your past]]
+[[Ask about his situation]]
+[[Ask about your past]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="previous page" tags="" position="203,2001" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+&lt;div class=&quot;diary&quot;&gt;
 2019 July 30
 
 Life just won&#39;t get easier, will it?
+&lt;/div&gt;
+
 
 &lt;&lt;if not hasVisited(&quot;page 4&quot;)&gt;&gt;[[flip to a random page|page 4][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
 [[put back|handbag]]
@@ -334,27 +440,29 @@ As you read the journal, James walks in.
 
 You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
 
-[[ask about his situation]]
-[[ask about your past]]
+[[Ask about his situation]]
+[[Ask about your past]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="handbag first" tags="" position="402,1404" size="100,100">You struggle to sit up, slowly reach to the handbag, and open it up on your lap.
 
 You see
+
+&lt;&lt;set $hintLimit = 5&gt;&gt; 
 [[A purse][$hint to $hint + 1]]
 [[A bus ticket][$hint to $hint + 1]]
 [[A notebook][$hint to $hint + 1]]
 [[A medicine box][$hint to $hint + 1]]
-[[A lighter][$hint to $hint + 1]]</tw-passagedata><tw-passagedata pid="27" name="ask about his situation" tags="" position="522,1947" size="100,100">&quot;I&#39;m fine. What happened to you? You look terrible!&quot;
+[[A lighter][$hint to $hint + 1]]</tw-passagedata><tw-passagedata pid="27" name="Ask about his situation" tags="" position="522,1947" size="100,100">&quot;I&#39;m fine. What happened to you? You look terrible!&quot;
 
 &quot;Me?&quot; James looks down at his sweaty clothes, &quot;Oh, I just came from the burger place that I worked for. I went there directly from school so I have my packpack. I&#39;m actually feeling pretty good!&quot;
 
 &quot;Did you not sleep well?&quot; You look at his eyes and say.
 
-&quot;I started working double shifts lately, so I slept a little late. No big deal. I&#39;m young, I will just get used to it soon!&quot;
+&quot;I&#39;ve been working double shifts lately, so I slept a little late. No big deal. I&#39;m young. I will just get used to it soon!&quot;
 
 [[&quot;It is my medical bills, isn&#39;t it?&quot;]]
-[[&quot;Don&#39;t push yourself too hard. I can work once I get out.&quot;]]</tw-passagedata><tw-passagedata pid="28" name="ask about your past" tags="" position="790,1941" size="100,100">&quot;I&#39;m okay, but I still don&#39;t remember anything...&quot;
+[[&quot;Don&#39;t push yourself too hard. I can work once I get out.&quot;]]</tw-passagedata><tw-passagedata pid="28" name="Ask about your past" tags="" position="790,1941" size="100,100">&quot;I&#39;m okay, but I still don&#39;t remember anything...&quot;
 
-&quot;It&#39;s okay mom. It probably just takes some time to come back.&quot; James consoles.
+&quot;It&#39;s okay mom. I&#39;ve talked to the doctor about this. Let&#39;s just be patient.&quot; James consoles.
 
 &quot;Tell me about my past, James.&quot; You ask.
 
@@ -363,7 +471,7 @@ You see
 &lt;&lt;set $questionLimit to 2&gt;&gt;
 [[Our life][$question to 1]]
 [[Thomas][$question to 1]]
-[[The accident][$question to 1]]</tw-passagedata><tw-passagedata pid="29" name="&quot;It is my medical bills, isn&#39;t it?&quot;" tags="" position="390,2093" size="100,100">&quot;No, no. Don&#39;t worry about the medical bill. You just rest here and get better.&quot;
+[[The accident][$question to 1]]</tw-passagedata><tw-passagedata pid="29" name="&quot;It is my medical bills, isn&#39;t it?&quot;" tags="" position="390,2093" size="100,100">&quot;No, no. Don&#39;t worry about the medical bill. You just rest here and get better. I will take care of the rest!&quot;
 
 Hearing James&#39; words, you feel a tightening in your throat and sourness in your eyes -- it&#39;s your tears. You take a deep breath and try to hold them back.
 
@@ -373,17 +481,19 @@ Your hand feels warm in James&#39; hands.
 
 As you speak, your [[doctor]] comes to the room.</tw-passagedata><tw-passagedata pid="30" name="&quot;Don&#39;t push yourself too hard. I can work once I get out.&quot;" tags="" position="555,2095" size="100,100">&quot;Hey mom, don&#39;t worry about working yet. Get healthy before you promise me anything.&quot; James speaks with a lighthearted tone.
 
-You put your hand on James&#39; wide shoulder, and smile. &quot;Okay I will get healthy first. I&#39;m almost there!&quot;
+You put your hand on James&#39; shoulder, and smile. &quot;Okay I will get healthy first. I&#39;m almost there!&quot;
 
-James&#39; should feels as solid as stone.
+James&#39; shoulder feels as solid as stone.
 
 As you speak, your [[doctor]] comes to the room.</tw-passagedata><tw-passagedata pid="31" name="doctor" tags="" position="659,2274" size="100,100">&quot;Hey Taylor, how are you feeling?&quot;
 
 &quot;I&#39;m feeling okay, except...I don&#39;t remember anything before the accident.&quot;
 
-&quot;Right, I&#39;m aware of that. Actually I&#39;m here to speak to you about this. We have identified some hippocampus damage in your brain, and that&#39;s the reason for your memory deficit.&quot;  
+&quot;Right, I&#39;m aware of that. Actually I&#39;m here to speak to you about this. We have identified some hippocampus damage in your brain, and that&#39;s the reason for your memory deficit.&quot;
 
-&quot;After discussion with other brain experts, we want to let you know that your brain damage may be able to be surgically repaired...&quot; The doctor continues, &quot;but, this is also a high-risk operation. So, please do ask any questions and take time to consider.&quot;
+James sighes.
+
+&quot;After discussion with other brain experts, we want to let you know that your brain damage may be able to be surgically repaired...&quot; The doctor continues, &quot;but, this will be a high-risk operation. So, please do ask any questions and take time to consider.&quot;
 
 [[Ask risk]]
 [[Ask cost]]
@@ -418,7 +528,7 @@ James shakes his head, &quot;I don&#39;t know. I was at school when the hospital
 	As you speak, your [[doctor]] comes to the room.
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Ask risk" tags="" position="509,2424" size="100,100">&quot;What would be the risk of this operation?&quot;
 
-&quot;Currently you seem to have no problem forming new memories, and you still recognize your son, but there is chance you may lose these capabilities.&quot;
+&quot;Currently you seem to have no problem forming new memories, and you still recognize your son, but there is chance you may lose these capabilities if the surgery does not go well.&quot;
 
 James stares at your face, as if trying to read your intention behind your face.
 
@@ -430,28 +540,28 @@ James stares at your face, as if trying to read your intention behind your face.
 &lt;&lt;if not hasVisited(&quot;What if not take surgery&quot;)&gt;&gt;[[What if not take surgery]]&lt;&lt;/if&gt;&gt;
 [[Take time to consider]]</tw-passagedata><tw-passagedata pid="36" name="Ask cost" tags="" position="659,2424" size="100,100">&quot;How much would that surgery cost?&quot;
 
-&quot;My assitant would be able to give you the exact number afterwards given your insurance plan, but this is indeed an advanced operation, so the insurance coverage for this might not be high.&quot;
+&quot;My assistant will be able to give you the exact number afterwards according to your insurance plan, but this is indeed an advanced operation to a rare condition, so the insurance coverage for this may not be high.&quot;
 
-James turns to you, &quot;mom, don&#39;t worry about money. If you want the surgery, we will figure it out!&quot;
+James turns to you, &quot;Mom, don&#39;t worry about money. If you want the surgery, we will figure it out!&quot;
 
 &lt;&lt;if not hasVisited(&quot;Ask risk&quot;)&gt;&gt;[[Ask risk]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;What if not take surgery&quot;)&gt;&gt;[[What if not take surgery]]&lt;&lt;/if&gt;&gt;
-[[Take time to consider]]</tw-passagedata><tw-passagedata pid="37" name="What if not take surgery" tags="" position="809,2424" size="100,100">&quot;What would happen if I don&#39;t take the surgery?&quot;
+[[Take time to consider]]</tw-passagedata><tw-passagedata pid="37" name="What if not take surgery" tags="" position="809,2424" size="100,100">&quot;What will happen if I don&#39;t take the surgery?&quot;
 
-&quot;You currently have no trouble forming new memories, so that means you should be able to live normally. The chance of getting back your memory is low if we do not fix the hippocampus damage, so it is almost like starting a new life.&quot;
+&quot;Your chance of getting back your memories will be low if the hippocampus damage is not fixed, and aging may deteriorate your memory further. But on the good side, you currently have no trouble forming new memories, so that means you should be able to live normally, just without your past. So in some sense, it is almost like starting a new life.&quot;
 
 &lt;&lt;if not hasVisited(&quot;Ask risk&quot;)&gt;&gt;[[Ask risk]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Ask cost&quot;)&gt;&gt;[[Ask cost]]&lt;&lt;/if&gt;&gt;
 [[Take time to consider]]</tw-passagedata><tw-passagedata pid="38" name="Take time to consider" tags="" position="668,2579" size="100,100">&lt;&lt;if random(1) &gt; 0.5&gt;&gt; &lt;&lt;set $result to &quot;success&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt; &lt;&lt;set $result to &quot;failure&quot;&gt;&gt; &lt;&lt;/if&gt;&gt;
 
-Late night, thoughts about the surgery keep you awake. You are alone with the silence in the room, almost feeling time is frozen.
+Late night, you are alone with the silence in the room. Thoughts about the surgery keep you awake. Time almost feel like frozen. Without past, what is time to you anyway.
 
-You keep thinking James&#39; last word before he left today, &quot;mom, I&#39;m with you no matter what decision you make.&quot;
+You keep thinking James&#39; words before he left today, &quot;Mom, I&#39;m with you no matter what decision you make.&quot;
 
-You know, you have to make this decision, with only the things you learnt in this room since you woke up, which is all you have.
+You know, you have to make this decision, with only the things you learnt in this hospital room since you woke up. That is all you have.
 
-You are a past-less ghost floating at this moment, and will the surgery change that?
+You feel like a past-less ghost floating at this moment. Will the surgery change that?
 
 Take all the time you need, but make a decision.
 
@@ -464,11 +574,11 @@ Does this mean the surgery succeeded?
 
 Despite the headache, you try to remember things from your past. Once you open that gate, all of a sudden, your memories overwhelm you like flood. 
 
-Flood is drowning, and drowning feels like agony -- you now remember what happened on the day of [[accident]].</tw-passagedata><tw-passagedata pid="40" name="No surgery" tags="" position="811,2721" size="100,100">You come home with James a few days later. 
+Flood drowns you, and drowning feels like agony -- you now remember what happened on the day of [[accident]].</tw-passagedata><tw-passagedata pid="40" name="No surgery" tags="" position="811,2721" size="100,100">You come home with James a few days later. 
 
-Since you are awake, James has been telling you about all the things we want to know -- stories about your past, items you own, his life at school, histories of things at home, etc. 
+Since you are awake, James has been telling you about all the things we want to know -- stories about your past, items you own, his life routines, histories of things at home, etc. 
 
-Everything sounds so perfect from what he says. The world in front of you almost feel like heaven. You always have a smile on your face, because there is nothing to worry about in [[life]].
+Everything sounds so perfect from what he says. The world presented to you almost feels like heaven. You always have a smile on your face, because why not -- there is nothing to worry in your [[life]].
 
 
 </tw-passagedata><tw-passagedata pid="41" name="failure" tags="" position="653,2727" size="100,100">You consciousness comes back to you.
@@ -477,31 +587,31 @@ You open your eyes. A face is right in front of you, with joy and excitement.
 
 &quot;Mom, how are you feeling? Do you remember me?&quot;
 
-You smile along with that face, and say &quot;You look like Thomas.&quot; You don&#39;t know who is Thomas, but you simply said it, as if the words came out of your mouth by themselves.
+You smile along with that face, and say &quot;You look like Thomas.&quot; You don&#39;t know who is Thomas, but you simply say it, as if the words come out of your mouth by themselves.
 
-The joy and excitement on that face are immediately frozen. &quot;Mom I&#39;m James. I&#39;m your son.&quot;
+The joy and excitement on that face immediately freeze. &quot;Mom, I&#39;m James. I&#39;m your son!&quot;
 
-You hear that voice, but you does not care to respond. You are completely absorbed by the space you are in. Everything is so fresh and new to you, and you look at all your surroundings with curiosity and wonder, like a new born baby.
+You hear that voice, but you does not care to respond. You are completely absorbed by the world around you. Everything is so fresh and new to you, and you look at all your surroundings with curiosity and wonder, like a new born baby.
 
-A few moments later, you turn to the man sitting by your side. &quot;Hello, who are you?&quot;
+A few moments later, you turn to the young man sitting by your side. &quot;Hello, who are you?&quot;
 
-END.</tw-passagedata><tw-passagedata pid="42" name="accident" tags="" position="511,2879" size="100,100">You were planning a suicide.
+END.</tw-passagedata><tw-passagedata pid="42" name="accident" tags="" position="511,2879" size="100,100">You were going to suicide.
 
-You had depression for years, and you just lost your job. You bought the bus ticket to a place where no one knows you, and the only things you took are your journal and your wedding ring -- the testimony of your painful past. You wanted to burn them before you swallow all your anti-depressant.
+You have had depression for years, and you just lost your job. You bought the bus ticket to a place where no one knows you, and the only things you took are your journal and your wedding ring -- the testimony of your painful past. You wanted to burn them before you swallow all your anti-depressant.
 
 Your death didn&#39;t happen, because of the accident, but your decision to die so clearly happened. It is forever imprinted in your memory, the invaluable treasure you just got back.
 
 &quot;Mom, do you still remember me!&quot; James&#39; face is right in front of you, looking at you attentively.
 
-He does not know it, but a few days ago you already gave up on him. The despair at the moment of giving up is so fresh and it presses you breathless.
+He does not know, a few days ago you already gave up on him. The despair at the moment of giving up is so fresh and it presses you breathless.
 
 You&#39;ve reclaimed the whole of yourself again. It will carry your past and flow to the future, just like everyone else.
 
-END.</tw-passagedata><tw-passagedata pid="43" name="life" tags="" position="811,2871" size="100,100">You almost feel like this is how life should be, except occasionally you find James has small inconsistencies in his stories. When you ask, James just says maybe he does not remember clearly. 
+END.</tw-passagedata><tw-passagedata pid="43" name="life" tags="" position="811,2871" size="100,100">You almost feel like this is how life should be, except occasionally you find  small inconsistencies in James&#39; stories. When you ask, James just says maybe he does not remember clearly. 
 
-You don&#39;t know better anyway. Who can remember everything perfectly, right? But when things like that happen, you always look behind your back for no obvious reason. You cannot describe the feeling, but it almost feel like there is a big empty hole behind you.
+You don&#39;t know better anyway. Who can remember everything perfectly, right? But when things like that happen, you always look behind your back and you don&#39;t even realize it. You cannot describe the feeling, but it almost feels like there is a big empty hole behind you.
 
-Of course, you won&#39;t see anything when you look back.
+Of course, you won&#39;t see anything from your behind.
 
 Over time, you don&#39;t notice the inconsistencies anymore, and you start to actually believe, this is how life should be.
 
