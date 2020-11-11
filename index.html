@@ -102,7 +102,8 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 	</div>
 	<tw-storydata name="Behind" startnode="1" creator="Twine" creator-version="2.3.5" ifid="57BE13C2-569F-46B1-9D6D-8DD7A3F1B661" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="title page" tags="" position="412,189" size="100,100">&lt;&lt;set $openEyes = false&gt;&gt; 
 &lt;&lt;set $moveFinger = false&gt;&gt; 
-&lt;&lt;set $tryToTalk = false&gt;&gt; 
+&lt;&lt;set $tryToTalk = false&gt;&gt;
+
 
 [[start]]</tw-passagedata><tw-passagedata pid="2" name="start" tags="" position="412,339" size="100,100">You consciousness comes back to you.
 
@@ -178,31 +179,67 @@ A nurse comes into your room, holding a handbag.
 
 &quot;Your son said you were having trouble remembering things. This may be temporary because you just wake up. We will have to see. Here are your belongings with you when you were sent here. Maybe they can help you remember something.&quot;
 
-The nurse puts down the [[handbag]] and leaves.</tw-passagedata><tw-passagedata pid="13" name="handbag" tags="" position="398,1422" size="100,100">You struggle to sit up, slowly reach to the handbag, and open it up on your lap.
+The nurse puts down the [[handbag|handbag first][$hint to 0]] and leaves.
 
-You see
-[[A notebook]]
-[[A purse]]
-[[A bus ticket]]
-[[A medicine box]]</tw-passagedata><tw-passagedata pid="14" name="A notebook" tags="" position="173,1572" size="100,100">
+&lt;&lt;set $hintLimit = 5&gt;&gt; </tw-passagedata><tw-passagedata pid="13" name="handbag" tags="" position="659,1755" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+You can see
+&lt;&lt;if not hasVisited(&quot;A purse&quot;)&gt;&gt;[[A purse][$hint to $hint + 1]]&lt;&lt;else&gt;&gt;A purse&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;A bus ticket&quot;)&gt;&gt;[[A bus ticket][$hint to $hint + 1]]&lt;&lt;else&gt;&gt;A bus ticket&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;A notebook&quot;)&gt;&gt;[[A notebook][$hint to $hint + 1]]&lt;&lt;else&gt;&gt;A notebook&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;A medicine box&quot;)&gt;&gt;[[A medicine box][$hint to $hint + 1]]&lt;&lt;else&gt;&gt;A medicine box&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;A lighter&quot;)&gt;&gt;[[A lighter][$hint to $hint + 1]]&lt;&lt;else&gt;&gt;A lighter&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+As you put the item back to the handbag, James walks in. 
 
-[[next page]]
-[[flip to a random page]]
+&quot;Mom you are awake! How are you feeling?&quot;
+
+You put away the handbag, and greet James with your eyes. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
+
+[[ask about his situation]]
+[[ask about your past]]
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="A notebook" tags="" position="173,1572" size="100,100">You open the first page.
+
+1998 April 30 
+
+I&#39;m starting a new journal for this special day -- today Thomas and I are officially in relationship. He said I just cannot stop smiling all night. I bet that is true. All the longing, the waiting, and the sleepless nights are finally over, and they are all worth it even just for tonight.
+
+[[next page|page 2][$hint to $hint + 1]]
+[[flip to a random page][$hint to $hint + 1]]
+[[last page][$hint to $hint + 1]]
 [[put back|handbag]]</tw-passagedata><tw-passagedata pid="15" name="A purse" tags="" position="323,1572" size="100,100">The purse looks worn off. It has plenty marks of time on it, and the color is faded.
 
 You open the purse. 
 
-There are about $600 worth of cash. The money looks like it has just been drawn from an ATM.
+There are about $80 worth of cash.
 
 There is an old photo of you and James, when James is little.
 
-You also find there is also a [[secret pocket]] in the purse.
+You also find there is also a [[secret pocket][$hint to $hint + 1]] in the purse.
 
-[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="16" name="A bus ticket" tags="" position="473,1572" size="100,100">A greyhound bus ticket to Memphis. The departure time is 3 days ago.
+[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="16" name="A bus ticket" tags="" position="473,1572" size="100,100">A greyhound bus ticket to Buffalo City. The departure time is August 5th, 2019, 3 days ago.
 
-[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="17" name="A medicine box" tags="" position="623,1572" size="100,100">The medicine box is not labeled. It is half-full of some white pills.
+[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="17" name="A medicine box" tags="" position="623,1572" size="100,100">The medicine box is not labeled. It is half-full with some white pills.
 
-[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="18" name="next page" tags="" position="92,1752" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="19" name="flip to a random page" tags="" position="241,1754" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="20" name="secret pocket" tags="" position="370,1761" size="100,100">You reach to the secret pocket.
+[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="18" name="flip to a random page" tags="" position="201,1710" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+2000 November 14
+
+James is not making my life easy. I vomitted 3 times today and I look horrendous in the mirror. Being pregnant is already a torture, but how are we going to hold our lives together when James comes out? Where do we get the money to feed the baby?
+
+&lt;&lt;if not hasVisited(&quot;page 4&quot;)&gt;&gt;[[next page|page 4][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;page 5&quot;)&gt;&gt;[[flip to a random page|page 5][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;last page&quot;)&gt;&gt;[[last page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+[[put back|handbag]]
+&lt;&lt;else&gt;&gt;
+As you read the journal, James walks in. 
+
+&quot;Mom you are awake! How are you feeling?&quot;
+
+You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
+
+[[ask about his situation]]
+[[ask about your past]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="secret pocket" tags="" position="369,1725" size="100,100">You reach to the secret pocket.
 
 There is a cashed check of $600, payable to you, from TidyMaid Cleaning Company.
 
@@ -210,7 +247,265 @@ Your finger also feels a hard item deep in the pocket. You reach for it and it i
 
 The ring looks, to put it nicely, low-key. It does not have a fancy design, nor  does it look well-preserved or shiny.
 
-[[Put back|handbag]]</tw-passagedata></tw-storydata>
+[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="20" name="A lighter" tags="" position="785,1575" size="100,100">Just a regular cheap lighter from gas station.
+
+[[Put back|handbag]]</tw-passagedata><tw-passagedata pid="21" name="page 2" tags="" position="39,1716" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+1998 May 4
+
+Thomas takes me to a movie today. It is weird going out with him as his girlfriend. I don&#39;t even know where to put my hands. Should I hold his hand? Or should I wait for him to start?
+
+I was nervous. What are couples supposed to do at the movie? All I know is I had no idea what the movie was about.
+
+&lt;&lt;if not hasVisited(&quot;flip to a random page&quot;)&gt;&gt;[[flip to a random page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;last page&quot;)&gt;&gt;[[last page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+[[put back|handbag]]
+&lt;&lt;else&gt;&gt;
+As you read the journal, James walks in. 
+
+&quot;Mom you are awake! How are you feeling?&quot;
+
+You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
+
+[[ask about his situation]]
+[[ask about your past]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="page 4" tags="" position="44,1838" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+2000 November 20
+
+Thomas&#39; job interview didn&#39;t go well today. It&#39;s near Thanksgiving. No one hire new people in the holiday season. It&#39;s no holiday for us.
+
+James, I don&#39;t know if I should bring you to this world, in a family like this. I&#39;m sorry...
+
+&lt;&lt;if not hasVisited(&quot;page 5&quot;)&gt;&gt;[[flip to a random page|page 5][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;last page&quot;)&gt;&gt;[[last page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+[[put back|handbag]]
+&lt;&lt;else&gt;&gt;
+As you read the journal, James walks in. 
+
+&quot;Mom you are awake! How are you feeling?&quot;
+
+You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
+
+[[ask about his situation]]
+[[ask about your past]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="page 5" tags="" position="206,1861" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+2006 September 30
+
+It&#39;s Thomas&#39; birthday today. I don&#39;t know where he is now, and I don&#39;t know if I miss him. I atually don&#39;t feel much, but why do I even write about him? It&#39;s just another normal boring day.
+
+&lt;&lt;if not hasVisited(&quot;last page&quot;)&gt;&gt;[[last page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+[[put back|handbag]]
+&lt;&lt;else&gt;&gt;
+As you read the journal, James walks in. 
+
+&quot;Mom you are awake! How are you feeling?&quot;
+
+You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
+
+[[ask about his situation]]
+[[ask about your past]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="last page" tags="" position="26,2005" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+2019 August 04
+
+I&#39;m sorry, James.
+
+[[previous page][$hint to $hint + 1]]
+&lt;&lt;if not hasVisited(&quot;flip to a random page&quot;)&gt;&gt;[[flip to a random page][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+[[put back|handbag]]
+&lt;&lt;else&gt;&gt;
+As you read the journal, James walks in. 
+
+&quot;Mom you are awake! How are you feeling?&quot;
+
+You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
+
+[[ask about his situation]]
+[[ask about your past]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="previous page" tags="" position="203,2001" size="100,100">&lt;&lt;if $hint &lt; $hintLimit&gt;&gt;
+2019 July 30
+
+Life just won&#39;t get easier, will it?
+
+&lt;&lt;if not hasVisited(&quot;page 4&quot;)&gt;&gt;[[flip to a random page|page 4][$hint to $hint + 1]]&lt;&lt;/if&gt;&gt;
+[[put back|handbag]]
+&lt;&lt;else&gt;&gt;
+As you read the journal, James walks in. 
+
+&quot;Mom you are awake! How are you feeling?&quot;
+
+You put the journal back to the handbag and put it away. James is wearing a funny-looking uniform with a huge backpack. The uniform looks dirty and sticks to his body by his sweat. He sits down by your bedside and breathes heavily. You can see his eyes are bloodshot and the dark circles under them.
+
+[[ask about his situation]]
+[[ask about your past]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="handbag first" tags="" position="402,1404" size="100,100">You struggle to sit up, slowly reach to the handbag, and open it up on your lap.
+
+You see
+[[A purse][$hint to $hint + 1]]
+[[A bus ticket][$hint to $hint + 1]]
+[[A notebook][$hint to $hint + 1]]
+[[A medicine box][$hint to $hint + 1]]
+[[A lighter][$hint to $hint + 1]]</tw-passagedata><tw-passagedata pid="27" name="ask about his situation" tags="" position="522,1947" size="100,100">&quot;I&#39;m fine. What happened to you? You look terrible!&quot;
+
+&quot;Me?&quot; James looks down at his sweaty clothes, &quot;Oh, I just came from the burger place that I worked for. I went there directly from school so I have my packpack. I&#39;m actually feeling pretty good!&quot;
+
+&quot;Did you not sleep well?&quot; You look at his eyes and say.
+
+&quot;I started working double shifts lately, so I slept a little late. No big deal. I&#39;m young, I will just get used to it soon!&quot;
+
+[[&quot;It is my medical bills, isn&#39;t it?&quot;]]
+[[&quot;Don&#39;t push yourself too hard. I can work once I get out.&quot;]]</tw-passagedata><tw-passagedata pid="28" name="ask about your past" tags="" position="790,1941" size="100,100">&quot;I&#39;m okay, but I still don&#39;t remember anything...&quot;
+
+&quot;It&#39;s okay mom. It probably just takes some time to come back.&quot; James consoles.
+
+&quot;Tell me about my past, James.&quot; You ask.
+
+&quot;Sure. What about your past?&quot;
+
+&lt;&lt;set $questionLimit to 2&gt;&gt;
+[[Our life][$question to 1]]
+[[Thomas][$question to 1]]
+[[The accident][$question to 1]]</tw-passagedata><tw-passagedata pid="29" name="&quot;It is my medical bills, isn&#39;t it?&quot;" tags="" position="390,2093" size="100,100">&quot;No, no. Don&#39;t worry about the medical bill. You just rest here and get better.&quot;
+
+Hearing James&#39; words, you feel a tightening in your throat and sourness in your eyes -- it&#39;s your tears. You take a deep breath and try to hold them back.
+
+Seeing your eyes turn red, James holds your hand. &quot;Mom you have raised me up by yourself. I&#39;m a grown man now and I just want you to be healthy.&quot;
+
+Your hand feels warm in James&#39; hands.
+
+As you speak, your [[doctor]] comes to the room.</tw-passagedata><tw-passagedata pid="30" name="&quot;Don&#39;t push yourself too hard. I can work once I get out.&quot;" tags="" position="555,2095" size="100,100">&quot;Hey mom, don&#39;t worry about working yet. Get healthy before you promise me anything.&quot; James speaks with a lighthearted tone.
+
+You put your hand on James&#39; wide shoulder, and smile. &quot;Okay I will get healthy first. I&#39;m almost there!&quot;
+
+James&#39; should feels as solid as stone.
+
+As you speak, your [[doctor]] comes to the room.</tw-passagedata><tw-passagedata pid="31" name="doctor" tags="" position="659,2274" size="100,100">&quot;Hey Taylor, how are you feeling?&quot;
+
+&quot;I&#39;m feeling okay, except...I don&#39;t remember anything before the accident.&quot;
+
+&quot;Right, I&#39;m aware of that. Actually I&#39;m here to speak to you about this. We have identified some hippocampus damage in your brain, and that&#39;s the reason for your memory deficit.&quot;  
+
+&quot;After discussion with other brain experts, we want to let you know that your brain damage may be able to be surgically repaired...&quot; The doctor continues, &quot;but, this is also a high-risk operation. So, please do ask any questions and take time to consider.&quot;
+
+[[Ask risk]]
+[[Ask cost]]
+[[What if not take surgery]]</tw-passagedata><tw-passagedata pid="32" name="Our life" tags="" position="679,2094" size="100,100">&quot;What was our life like before the accident?&quot;
+
+James takes a moment, and then looks into your eyes, &quot;It was great. We were never rich but we were also never in trouble. We always had food on the table and roof above our head. It was just you and me, but I&#39;ve made it to college. I think we were very happy.&quot;
+
+&lt;&lt;if $question &lt; $questionLimit&gt;&gt;
+	&lt;&lt;if not hasVisited(&quot;Thomas&quot;)&gt;&gt;[[Thomas][$question to $question+1]]&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if not hasVisited(&quot;The accident&quot;)&gt;&gt;[[The accident][$question to $question+1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+	As you speak, your [[doctor]] comes to the room.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="Thomas" tags="" position="813,2089" size="100,100">&quot;Do you remember who is Thomas?&quot;
+
+James looks a bit surprised when he hear the question, but that look immediately goes away.
+
+&quot;No. I don&#39;t think I know anyone named Thomas.&quot;
+
+&lt;&lt;if $question &lt; $questionLimit&gt;&gt;
+	&lt;&lt;if not hasVisited(&quot;Our life&quot;)&gt;&gt;[[Our life][$question to $question+1]]&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if not hasVisited(&quot;The accident&quot;)&gt;&gt;[[The accident][$question to $question+1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+	As you speak, your [[doctor]] comes to the room.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="The accident" tags="" position="940,2091" size="100,100">&quot;Do you know what I was up to when this accident happened?&quot;
+
+James shakes his head, &quot;I don&#39;t know. I was at school when the hospital called me. You didn&#39;t tell me you had any plan either.&quot;
+
+&lt;&lt;if $question &lt; $questionLimit&gt;&gt;
+	&lt;&lt;if not hasVisited(&quot;Our life&quot;)&gt;&gt;[[Our life][$question to $question+1]]&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if not hasVisited(&quot;Thomas&quot;)&gt;&gt;[[Thomas][$question to $question+1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+	As you speak, your [[doctor]] comes to the room.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Ask risk" tags="" position="509,2424" size="100,100">&quot;What would be the risk of this operation?&quot;
+
+&quot;Currently you seem to have no problem forming new memories, and you still recognize your son, but there is chance you may lose these capabilities.&quot;
+
+James stares at your face, as if trying to read your intention behind your face.
+
+&quot;How high is the risk, doctor?&quot; You ask.
+
+&quot;About 50/50 chance.&quot;
+
+&lt;&lt;if not hasVisited(&quot;Ask cost&quot;)&gt;&gt;[[Ask cost]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;What if not take surgery&quot;)&gt;&gt;[[What if not take surgery]]&lt;&lt;/if&gt;&gt;
+[[Take time to consider]]</tw-passagedata><tw-passagedata pid="36" name="Ask cost" tags="" position="659,2424" size="100,100">&quot;How much would that surgery cost?&quot;
+
+&quot;My assitant would be able to give you the exact number afterwards given your insurance plan, but this is indeed an advanced operation, so the insurance coverage for this might not be high.&quot;
+
+James turns to you, &quot;mom, don&#39;t worry about money. If you want the surgery, we will figure it out!&quot;
+
+&lt;&lt;if not hasVisited(&quot;Ask risk&quot;)&gt;&gt;[[Ask risk]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;What if not take surgery&quot;)&gt;&gt;[[What if not take surgery]]&lt;&lt;/if&gt;&gt;
+[[Take time to consider]]</tw-passagedata><tw-passagedata pid="37" name="What if not take surgery" tags="" position="809,2424" size="100,100">&quot;What would happen if I don&#39;t take the surgery?&quot;
+
+&quot;You currently have no trouble forming new memories, so that means you should be able to live normally. The chance of getting back your memory is low if we do not fix the hippocampus damage, so it is almost like starting a new life.&quot;
+
+&lt;&lt;if not hasVisited(&quot;Ask risk&quot;)&gt;&gt;[[Ask risk]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;Ask cost&quot;)&gt;&gt;[[Ask cost]]&lt;&lt;/if&gt;&gt;
+[[Take time to consider]]</tw-passagedata><tw-passagedata pid="38" name="Take time to consider" tags="" position="668,2579" size="100,100">&lt;&lt;if random(1) &gt; 0.5&gt;&gt; &lt;&lt;set $result to &quot;success&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt; &lt;&lt;set $result to &quot;failure&quot;&gt;&gt; &lt;&lt;/if&gt;&gt;
+
+Late night, thoughts about the surgery keep you awake. You are alone with the silence in the room, almost feeling time is frozen.
+
+You keep thinking James&#39; last word before he left today, &quot;mom, I&#39;m with you no matter what decision you make.&quot;
+
+You know, you have to make this decision, with only the things you learnt in this room since you woke up, which is all you have.
+
+You are a past-less ghost floating at this moment, and will the surgery change that?
+
+Take all the time you need, but make a decision.
+
+&lt;&lt;link &quot;Take surgery&quot; $result&gt;&gt;&lt;&lt;/link&gt;&gt;
+[[No surgery]]</tw-passagedata><tw-passagedata pid="39" name="success" tags="" position="511,2729" size="100,100">You consciousness comes back to you.
+
+You open your eyes. James&#39; face is right there, with joy and excitement. Yes, you still recognize James, and you also recall you were having a surgery to recover your memory.
+
+Does this mean the surgery succeeded?
+
+Despite the headache, you try to remember things from your past. Once you open that gate, all of a sudden, your memories overwhelm you like flood. 
+
+Flood is drowning, and drowning feels like agony -- you now remember what happened on the day of [[accident]].</tw-passagedata><tw-passagedata pid="40" name="No surgery" tags="" position="811,2721" size="100,100">You come home with James a few days later. 
+
+Since you are awake, James has been telling you about all the things we want to know -- stories about your past, items you own, his life at school, histories of things at home, etc. 
+
+Everything sounds so perfect from what he says. The world in front of you almost feel like heaven. You always have a smile on your face, because there is nothing to worry about in [[life]].
+
+
+</tw-passagedata><tw-passagedata pid="41" name="failure" tags="" position="653,2727" size="100,100">You consciousness comes back to you.
+
+You open your eyes. A face is right in front of you, with joy and excitement.
+
+&quot;Mom, how are you feeling? Do you remember me?&quot;
+
+You smile along with that face, and say &quot;You look like Thomas.&quot; You don&#39;t know who is Thomas, but you simply said it, as if the words came out of your mouth by themselves.
+
+The joy and excitement on that face are immediately frozen. &quot;Mom I&#39;m James. I&#39;m your son.&quot;
+
+You hear that voice, but you does not care to respond. You are completely absorbed by the space you are in. Everything is so fresh and new to you, and you look at all your surroundings with curiosity and wonder, like a new born baby.
+
+A few moments later, you turn to the man sitting by your side. &quot;Hello, who are you?&quot;
+
+END.</tw-passagedata><tw-passagedata pid="42" name="accident" tags="" position="511,2879" size="100,100">You were planning a suicide.
+
+You had depression for years, and you just lost your job. You bought the bus ticket to a place where no one knows you, and the only things you took are your journal and your wedding ring -- the testimony of your painful past. You wanted to burn them before you swallow all your anti-depressant.
+
+Your death didn&#39;t happen, because of the accident, but your decision to die so clearly happened. It is forever imprinted in your memory, the invaluable treasure you just got back.
+
+&quot;Mom, do you still remember me!&quot; James&#39; face is right in front of you, looking at you attentively.
+
+He does not know it, but a few days ago you already gave up on him. The despair at the moment of giving up is so fresh and it presses you breathless.
+
+You&#39;ve reclaimed the whole of yourself again. It will carry your past and flow to the future, just like everyone else.
+
+END.</tw-passagedata><tw-passagedata pid="43" name="life" tags="" position="811,2871" size="100,100">You almost feel like this is how life should be, except occasionally you find James has small inconsistencies in his stories. When you ask, James just says maybe he does not remember clearly. 
+
+You don&#39;t know better anyway. Who can remember everything perfectly, right? But when things like that happen, you always look behind your back for no obvious reason. You cannot describe the feeling, but it almost feel like there is a big empty hole behind you.
+
+Of course, you won&#39;t see anything when you look back.
+
+Over time, you don&#39;t notice the inconsistencies anymore, and you start to actually believe, this is how life should be.
+
+END.</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],[" ","\\u00a0"],[" ","\\u1680"],["᠎","\\u180e"],[" ","\\u2000"],[" ","\\u2001"],[" ","\\u2002"],[" ","\\u2003"],[" ","\\u2004"],[" ","\\u2005"],[" ","\\u2006"],[" ","\\u2007"],[" ","\\u2008"],[" ","\\u2009"],[" ","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],[" ","\\u202f"],[" ","\\u205f"],["　","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="\\s"===e?"\\S":e.replace(/^\[/,"[^"),r="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",n=r.replace("\\-",""),a=function(){return"("+r+"+)\\(([^\\)\\|\\n]+)\\):|("+r+"+):([^;\\|\\n]+);|((?:\\."+r+"+)+);|((?:#"+r+"+)+);"}();return Object.freeze({space:e,spaceNoTerminator:"[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:t,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:r,anyLetterStrict:n,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:a,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){!function(e){if(e&&e.prototype&&null==e.prototype.firstElementChild){var t=Node.ELEMENT_NODE;Object.defineProperty(e.prototype,"firstElementChild",{get:function(){for(var e=this.childNodes,r=0;r<e.length;++r){var n=e[r];if(n.nodeType===t)return n}return null}})}}(window.Node||window.Element)}(),function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=e&&function(){try{var e=document.createElement("audio").play();return e.catch(function(){}),e instanceof Promise}catch(e){}return!1}(),r=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),n=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),a=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),i=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),o=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),s=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,audioPromise:t,fileAPI:r,geolocation:n,mutationObserver:a,performance:i,touch:o,transitionEndEvent:s})}(),Visibility=function(){function e(){return Boolean(r&&document[r.hiddenProperty])}function t(){return r&&document[r.stateProperty]||"visible"}var r=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return null}();return Object.freeze(Object.defineProperties({},{isHidden:{value:e},state:{value:t},hiddenProperty:{value:r.hiddenProperty},stateProperty:{value:r.stateProperty},changeEvent:{value:r.changeEvent}}))}(),_ref3=function(){function e(t){if("object"!==(void 0===t?"undefined":_typeof(t))||null===t)return t;if(t instanceof String)return String(t);if(t instanceof Number)return Number(t);if(t instanceof Boolean)return Boolean(t);if("function"==typeof t.clone)return t.clone(!0);if(t.nodeType&&"function"==typeof t.cloneNode)return t.cloneNode(!0);var r=void 0;return t instanceof Array?r=new Array(t.length):t instanceof Date?r=new Date(t.getTime()):t instanceof Map?(r=new Map,t.forEach(function(t,n){return r.set(n,e(t))})):t instanceof RegExp?r=new RegExp(t):t instanceof Set?(r=new Set,t.forEach(function(t){return r.add(e(t))})):r=Object.create(Object.getPrototypeOf(t)),Object.keys(t).forEach(function(n){return r[n]=e(t[n])}),r}function t(e){for(var t=document.createDocumentFragment(),r=document.createElement("p"),n=void 0;null!==(n=e.firstChild);){if(n.nodeType===Node.ELEMENT_NODE){switch(n.nodeName.toUpperCase()){case"BR":if(null!==n.nextSibling&&n.nextSibling.nodeType===Node.ELEMENT_NODE&&"BR"===n.nextSibling.nodeName.toUpperCase()){e.removeChild(n.nextSibling),e.removeChild(n),t.appendChild(r),r=document.createElement("p");continue}if(!r.hasChildNodes()){e.removeChild(n);continue}break;case"ADDRESS":case"ARTICLE":case"ASIDE":case"BLOCKQUOTE":case"CENTER":case"DIV":case"DL":case"FIGURE":case"FOOTER":case"FORM":case"H1":case"H2":case"H3":case"H4":case"H5":case"H6":case"HEADER":case"HR":case"MAIN":case"NAV":case"OL":case"P":case"PRE":case"SECTION":case"TABLE":case"UL":r.hasChildNodes()&&(t.appendChild(r),r=document.createElement("p")),t.appendChild(n);continue}}r.appendChild(n)}r.hasChildNodes()&&t.appendChild(r),e.appendChild(t)}function r(){try{return document.activeElement||null}catch(e){return null}}function n(e,t,r){var n="object"===(void 0===e?"undefined":_typeof(e))?e:document.getElementById(e);if(null==n)return null;var a=Array.isArray(t)?t:[t];jQuery(n).empty();for(var i=0,o=a.length;i<o;++i)if(Story.has(a[i]))return new Wikifier(n,Story.get(a[i]).processText().trim()),n;if(null!=r){var s=String(r).trim();""!==s&&new Wikifier(n,s)}return n}function a(e,t,r){var n=jQuery(document.createElement("div")),a=jQuery(document.createElement("button")),i=jQuery(document.createElement("pre")),o=L10n.get("errorTitle")+": "+(t||"unknown error");return a.addClass("error-toggle").ariaClick({label:L10n.get("errorToggle")},function(){a.hasClass("enabled")?(a.removeClass("enabled"),i.attr({"aria-hidden":!0,hidden:"hidden"})):(a.addClass("enabled"),i.removeAttr("aria-hidden hidden"))}).appendTo(n),jQuery(document.createElement("span")).addClass("error").text(o).appendTo(n),jQuery(document.createElement("code")).text(r).appendTo(i),i.addClass("error-source").attr({"aria-hidden":!0,hidden:"hidden"}).appendTo(n),n.addClass("error-view").appendTo(e),console.warn(o+"\n\t"+r.replace(/\n/g,"\n\t")),!1}function i(e,t){var r=i;switch(void 0===e?"undefined":_typeof(e)){case"number":if(Number.isNaN(e))return t;break;case"object":if(null===e)return t;if(Array.isArray(e))return e.map(function(e){return r(e,t)}).join(", ");if(e instanceof Set)return[].concat(_toConsumableArray(e)).map(function(e){return r(e,t)}).join(", ");if(e instanceof Map){return"{ "+[].concat(_toConsumableArray(e)).map(function(e){var n=_slicedToArray(e,2),a=n[0],i=n[1];return r(a,t)+" → "+r(i,t)}).join(", ")+" }"}return e instanceof Date?e.toLocaleString():"function"==typeof e.toString?e.toString():Object.prototype.toString.call(e);case"function":case"undefined":return t}return String(e)}return Object.freeze(Object.defineProperties({},{clone:{value:e},convertBreaks:{value:t},safeActiveElement:{value:r},setPageElement:{value:n},throwError:{value:a},toStringOrDefault:{value:i}}))
