@@ -116,7 +116,7 @@ a {
   	color: #404040;
   	padding-left: 50px;
   	padding-right: 150px;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="title page" tags="" position="412,189" size="100,100">&lt;div class=&quot;container-outer&quot;&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="title page" tags="" position="104,624" size="100,100">&lt;div class=&quot;container-outer&quot;&gt;
 	&lt;p class=&quot;title_name&quot;&gt;Behind&lt;/p&gt;
   	&lt;p class=&quot;author&quot;&gt;Tim Jia&lt;/p&gt;	
   	&lt;p class=&quot;start&quot;&gt;[[start]]&lt;/p&gt;
@@ -175,7 +175,7 @@ a {
   body {
   	background-color: black;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="start" tags="" position="412,339" size="100,100">&lt;&lt;set $openEyes = false&gt;&gt; 
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="start" tags="" position="266,622" size="100,100">&lt;&lt;set $openEyes = false&gt;&gt; 
 &lt;&lt;set $moveFinger = false&gt;&gt; 
 &lt;&lt;set $tryToTalk = false&gt;&gt;
 
@@ -184,25 +184,25 @@ You consciousness comes back to you.
 
 [[Open eyes][$openEyes to true]]
 [[Move finger][$moveFinger to true]]
-[[Try to talk][$tryToTalk to true]]</tw-passagedata><tw-passagedata pid="3" name="Open eyes" tags="" position="262,489" size="100,100">Things are blurry and unbearably bright at first, but over some time your eyes find their focus. 
+[[Try to talk][$tryToTalk to true]]</tw-passagedata><tw-passagedata pid="3" name="Open eyes" tags="" position="438,551" size="100,100">Things are blurry and unbearably bright at first, but over some time your eyes find their focus. 
 
 You are lying on bed. A young man sits by your side. His eyes are closed, and he looks extremely tired.
 
-This seems like a hospital.
+You do not recognize this place, but it looks spotlessly sterile.
 
 &lt;&lt;if not $moveFinger&gt;&gt;[[Move finger][$moveFinger to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $tryToTalk&gt;&gt;[[Try to talk][$tryToTalk to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $moveFinger and $tryToTalk&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Move finger" tags="" position="412,489" size="100,100">Your body feels alien to you, until you feel the pain when you try to just slightly move your finger. The pain is certainly unpleasant, but at least it confirms you can still feel your body.
+&lt;&lt;if $moveFinger and $tryToTalk&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Move finger" tags="" position="432,675" size="100,100">Your body feels alien to you, until you feel the pain when you try to just slightly move your finger. The pain is certainly unpleasant, but at least it confirms you can still feel your body.
 
 &lt;&lt;if not $openEyes&gt;&gt;[[Open eyes][$openEyes to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $tryToTalk&gt;&gt;[[Try to talk][$tryToTalk to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $openEyes and $tryToTalk&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Try to talk" tags="" position="562,489" size="100,100">You try to move your tongue, but only to find your mouth and throat extremely dry. You slightly open your mouth but struggle to say a meaningful word. Maybe an &quot;uh&quot; syllable comes out, or maybe it does not make any sound.
+&lt;&lt;if $openEyes and $tryToTalk&gt;&gt;Looking at the young man, you said, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Try to talk" tags="" position="430,804" size="100,100">You try to move your tongue, but only to find your mouth and throat extremely dry. You slightly open your mouth but struggle to say a meaningful word. Maybe an &quot;uh&quot; syllable comes out, or maybe it does not make any sound.
 
 You have to close your mouth and move your tongue to moisten your throat. Now you should be able to talk.
 
 &lt;&lt;if not $openEyes&gt;&gt;[[Open eyes][$openEyes to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $moveFinger&gt;&gt;[[Move finger][$moveFinger to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $openEyes and $moveFinger&gt;&gt;Looking at the young man, you say, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="&quot;James&quot;" tags="" position="409,646" size="100,100">&lt;&lt;set $where = false&gt;&gt; 
+&lt;&lt;if $openEyes and $moveFinger&gt;&gt;Looking at the young man, you say, [[&quot;James&quot;]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="&quot;James&quot;" tags="" position="620,656" size="100,100">&lt;&lt;set $where = false&gt;&gt; 
 &lt;&lt;set $what = false&gt;&gt; 
 &lt;&lt;set $howLong = false&gt;&gt; 
 
@@ -214,12 +214,12 @@ Yes. This young man, James, is your son.
 
 [[&quot;Where am I?&quot;][$where to true]]
 [[&quot;What happened to me?&quot;][$what to true]]
-[[&quot;How long have I been here?&quot;][$howLong to true]]</tw-passagedata><tw-passagedata pid="7" name="&quot;Where am I?&quot;" tags="" position="259,796" size="100,100">&quot;You are in the hospital. Don&#39;t worry. The doctor said your condition is stable now. You just need to rest.&quot; James speaks reassuringly, as if everything is in his control.
+[[&quot;How long have I been here?&quot;][$howLong to true]]</tw-passagedata><tw-passagedata pid="7" name="&quot;Where am I?&quot;" tags="" position="791,520" size="100,100">&quot;You are in the hospital. Don&#39;t worry. The doctor said your condition is stable now. You just need to rest.&quot; James speaks reassuringly, as if everything is in his control.
 
 
 &lt;&lt;if not $what&gt;&gt;[[&quot;What happened to me?&quot;][$what to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $howLong&gt;&gt;[[&quot;How long have I been here?&quot;][$howLong to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $where and $howLong&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="&quot;What happened to me?&quot;" tags="" position="409,796" size="100,100">&quot;You had a car accident. They said you were already unconscious when you got here. Do you remember anything mom?&quot;
+&lt;&lt;if $where and $howLong&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="&quot;What happened to me?&quot;" tags="" position="793,684" size="100,100">&quot;You had a car accident. They said you were already unconscious when you got here. Do you remember anything Mom?&quot;
 
 You try to think, but nothing comes to you. You shake your head.
 
@@ -227,7 +227,7 @@ You try to think, but nothing comes to you. You shake your head.
 
 &lt;&lt;if not $where&gt;&gt;[[&quot;Where am I?&quot;][$where to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $howLong&gt;&gt;[[&quot;How long have I been here?&quot;][$howLong to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $where and $howLong&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="&quot;How long have I been here?&quot;" tags="" position="559,796" size="100,100">&quot;You&#39;ve been sleeping for 3 days.&quot;
+&lt;&lt;if $where and $howLong&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="&quot;How long have I been here?&quot;" tags="" position="767,840" size="100,100">&quot;You&#39;ve been sleeping for 3 days.&quot;
 
 &quot;3 days?&quot; You don&#39;t even know long it feels, because cannot recall when it started. Actually, you recall nothing except void.
 
@@ -235,7 +235,7 @@ You try to think, but nothing comes to you. You shake your head.
 
 &lt;&lt;if not $where&gt;&gt;[[&quot;Where am I?&quot;][$where to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if not $what&gt;&gt;[[&quot;What happened to me?&quot;][$what to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $where and $what&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="your brain hurts" tags="" position="398,972" size="100,100">Engaging with any thoughts feels like sticking a finger into a bleeding wound -- all you get is pain, and after the pain there is nothing.
+&lt;&lt;if $where and $what&gt;&gt;You try to think, but [[your brain hurts]].&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="your brain hurts" tags="" position="398,984" size="100,100">Engaging with any thoughts feels like sticking a finger into a bleeding wound -- all you get is pain, and after the pain there is nothing.
 
 You cannot recall what is your job, where you live, what you were up to, the happiest moment in your life...but you do still recognize James, your son.
 
@@ -245,11 +245,11 @@ He is running behind you, trying to catch you, and you run ahead. He giggles and
 
 &quot;Mom, wait for me...&quot;
 
-You are still running ahaed, and James cannot catch you. You keep running even after hearing his voice. 
+You are still running ahead, and James cannot catch you. You keep running even after hearing his voice. 
 
 You want to stop, you want to turn around and hold him in your arms, but you just cannot -- you cannot control your body.
 
-You run faster and faster, and James is further and further behind. His voices is fading away
+You run faster and faster, and James is further and further behind. His voice is fading away
 
 &quot;Mom, wait for me...&quot;
 
@@ -446,14 +446,14 @@ You put the journal back to the handbag and put it away. James is wearing a funn
 
 You see
 
-&lt;&lt;set $hintLimit = 5&gt;&gt; 
+&lt;&lt;set $hintLimit = 7&gt;&gt; 
 [[A purse][$hint to $hint + 1]]
 [[A bus ticket][$hint to $hint + 1]]
 [[A notebook][$hint to $hint + 1]]
 [[A medicine box][$hint to $hint + 1]]
 [[A lighter][$hint to $hint + 1]]</tw-passagedata><tw-passagedata pid="27" name="Ask about his situation" tags="" position="522,1947" size="100,100">&quot;I&#39;m fine. What happened to you? You look terrible!&quot;
 
-&quot;Me?&quot; James looks down at his sweaty clothes, &quot;Oh, I just came from the burger place that I worked for. I went there directly from school so I have my packpack. I&#39;m actually feeling pretty good!&quot;
+&quot;Me?&quot; James looks down at his sweaty clothes, &quot;Oh, I just came from the burger place that I worked for. I went there directly from school so I have my backpack. I&#39;m actually feeling pretty good!&quot;
 
 &quot;Did you not sleep well?&quot; You look at his eyes and say.
 
@@ -566,7 +566,7 @@ You feel like a past-less ghost floating at this moment. Will the surgery change
 Take all the time you need, but make a decision.
 
 &lt;&lt;link &quot;Take surgery&quot; $result&gt;&gt;&lt;&lt;/link&gt;&gt;
-[[No surgery]]</tw-passagedata><tw-passagedata pid="39" name="success" tags="" position="511,2729" size="100,100">You consciousness comes back to you.
+[[No surgery]]</tw-passagedata><tw-passagedata pid="39" name="success" tags="" position="511,2729" size="100,100">Your consciousness comes back to you.
 
 You open your eyes. James&#39; face is right there, with joy and excitement. Yes, you still recognize James, and you also recall you were having a surgery to recover your memory.
 
@@ -581,7 +581,7 @@ Since you are awake, James has been telling you about all the things we want to 
 Everything sounds so perfect from what he says. The world presented to you almost feels like heaven. You always have a smile on your face, because why not -- there is nothing to worry in your [[life]].
 
 
-</tw-passagedata><tw-passagedata pid="41" name="failure" tags="" position="653,2727" size="100,100">You consciousness comes back to you.
+</tw-passagedata><tw-passagedata pid="41" name="failure" tags="" position="653,2727" size="100,100">Your consciousness comes back to you.
 
 You open your eyes. A face is right in front of you, with joy and excitement.
 
@@ -595,11 +595,11 @@ You hear that voice, but you does not care to respond. You are completely absorb
 
 A few moments later, you turn to the young man sitting by your side. &quot;Hello, who are you?&quot;
 
-END.</tw-passagedata><tw-passagedata pid="42" name="accident" tags="" position="511,2879" size="100,100">You were going to suicide.
+END.</tw-passagedata><tw-passagedata pid="42" name="accident" tags="" position="511,2879" size="100,100">You had a plan that day.
 
 You have had depression for years, and you just lost your job. You bought the bus ticket to a place where no one knows you, and the only things you took are your journal and your wedding ring -- the testimony of your painful past. You wanted to burn them before you swallow all your anti-depressant.
 
-Your death didn&#39;t happen, because of the accident, but your decision to die so clearly happened. It is forever imprinted in your memory, the invaluable treasure you just got back.
+Your plan didn&#39;t realize, because of the accident, but your decision of the plan so clearly happened. It is forever imprinted in your memory, the invaluable treasure you just got back.
 
 &quot;Mom, do you still remember me!&quot; James&#39; face is right in front of you, looking at you attentively.
 
